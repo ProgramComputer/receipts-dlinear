@@ -3,7 +3,7 @@
 FROM python:3.9-slim
 LABEL org.opencontainers.image.source="https://github.com/ProgramComputer/receipts-dlinear"
 
-WORKDIR /
+WORKDIR /src/app
 
 RUN apt-get update && apt-get install -y \
     build-essential \

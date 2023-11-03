@@ -66,7 +66,7 @@ st.write("created by Paul")
 
 n_epochs = st.slider("$$Epochs$$",value=300,max_value=1000)
 
-train_percent = st.slider("$$Training\;Split$$",value=0.80,max_value=0.9,min_value=0.1,step=0.1)
+train_percent = st.slider("$$Training\;Split$$",value=0.80,max_value=0.9,min_value=0.1)
 source = get_data()
 
 #https://machinelearningmastery.com/lstm-for-time-series-prediction-in-pytorch/ used as reference
@@ -91,7 +91,7 @@ def create_dataset(dataset, lookback):
         target = dataset[i+1:i+lookback+1]
         X.append(feature)
         y.append(target)
-    return torch.tensor(X), torch.tensor(y)
+    return torch.from_numpy(X), torch.from_numpy(y)
 
 lookback = 1
 X_train, y_train = create_dataset(train, lookback)
