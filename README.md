@@ -1,4 +1,5 @@
 # receipts-dlinear
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://receipts-dlinear.streamlit.app)
 
 ## Set-up
 * Download and install [Docker](https://docs.docker.com/engine/install/)
