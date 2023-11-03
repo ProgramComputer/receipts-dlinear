@@ -25,4 +25,4 @@ jobs:
           - name: 'Build Inventory Image'
             run: |
               docker build . --tag ghcr.io/programcomputer/receipts-dlinear:latest
-              docker push ghcr.io/programcomputer/receipts-dlineaer:latest
+              docker push ghcr.io/programcomputer/receipts-dlinear:latest
