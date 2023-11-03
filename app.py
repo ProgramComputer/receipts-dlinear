@@ -185,7 +185,7 @@ st.table(future_table)
 st.write("## Code")
 
 st.write(
-    "See more in my public [GitHub"
+    "Find at public [GitHub"
     " repository](https://github.com/ProgramComputer/receipts-dlinear)"
 )
    
