@@ -91,7 +91,7 @@ def create_dataset(dataset, lookback):
         target = dataset[i+1:i+lookback+1]
         X.append(feature)
         y.append(target)
-    return torch.from_numpy(X), torch.from_numpy(y)
+    return torch.from_numpy(np.array(X)), torch.from_numpy(np.array(y))
 
 lookback = 1
 X_train, y_train = create_dataset(train, lookback)
