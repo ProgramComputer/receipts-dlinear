@@ -1,5 +1,5 @@
 altair==4.2.2
 pandas==1.5.3
 streamlit==1.28.1
-torch @ https://download.pytorch.org/whl/cu118/torch-2.1.0%2Bcu118-cp310-cp310-linux_x86_64.whl#sha256=a81b554184492005543ddc32e96469f9369d778dedd195d73bda9bed407d6589
+torch==2.1.0
 numpy==1.23.5
