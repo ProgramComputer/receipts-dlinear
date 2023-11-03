@@ -1,5 +1,5 @@
 altair==4.2.2
 pandas==1.5.3
 streamlit==1.28.1
-torch==2.1.0
+light-the-torch
 numpy==1.23.5
