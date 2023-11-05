@@ -166,6 +166,8 @@ months = ["January", "February", "March", "April", "May", "June",
 
 source['# Date'] = pd.to_datetime(source['# Date'], errors='coerce')
 source = source.rename(columns={source.columns[0]: 'Month',"Receipt_Count":"Number of receipts"})
+past_csv = convert_df(source)
+
 past_table = source.groupby(source['Month'].dt.strftime('%B'))['Number of receipts'].sum().sort_values().to_frame()
 
 past_table = past_table.reindex(months)
@@ -183,6 +185,13 @@ future_table.loc[:, "Number of receipts"] = future_table["Number of receipts"].a
 past_table.loc[:, "Number of receipts"] = past_table["Number of receipts"].map('{:,d}'.format)
 
 st.write("## Monthly scanned receipts for 2021")
+st.download_button(
+   "Press to Download (Daily)",
+   past_csv,
+   "file.csv",
+   "text/csv",
+   key='download-csv'
+)
 st.table(past_table)
 st.write("## Predicted monthly scanned receipts for 2022")
 
