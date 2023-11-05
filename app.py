@@ -171,7 +171,7 @@ past_table = source.groupby(source['Month'].dt.strftime('%B'))['Number of receip
 past_table = past_table.reindex(months)
 
 future_source['# Date'] = pd.to_datetime(future_source['# Date'], errors='coerce')
-future_csv = convert_df(df)
+future_csv = convert_df(future_source)
 
 future_source = future_source.rename(columns={future_source.columns[0]: 'Month',"Receipt_Count":"Number of receipts"})
 
