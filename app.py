@@ -190,7 +190,7 @@ st.download_button(
    past_csv,
    "file.csv",
    "text/csv",
-   key='download-csv'
+   key='download-csv-past'
 )
 st.table(past_table)
 st.write("## Predicted monthly scanned receipts for 2022")
@@ -201,7 +201,7 @@ st.download_button(
    future_csv,
    "file.csv",
    "text/csv",
-   key='download-csv'
+    key='download-csv-future'
 )
 
 st.table(future_table)
