@@ -17,7 +17,7 @@ st.set_page_config(
 def get_data():
     return pd.read_csv("receipts_daily.csv")
 
-@st.experimental_memo
+@st.cache_data
 def convert_df(df):
    return df.to_csv(index=False).encode('utf-8')
 
