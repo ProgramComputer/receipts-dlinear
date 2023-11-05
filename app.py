@@ -17,6 +17,10 @@ st.set_page_config(
 def get_data():
     return pd.read_csv("receipts_daily.csv")
 
+@st.experimental_memo
+def convert_df(df):
+   return df.to_csv(index=False).encode('utf-8')
+
 
 
 @st.cache_resource()
@@ -167,6 +171,8 @@ past_table = source.groupby(source['Month'].dt.strftime('%B'))['Number of receip
 past_table = past_table.reindex(months)
 
 future_source['# Date'] = pd.to_datetime(future_source['# Date'], errors='coerce')
+future_csv = convert_df(df)
+
 future_source = future_source.rename(columns={future_source.columns[0]: 'Month',"Receipt_Count":"Number of receipts"})
 
 future_table = future_source.groupby(source['Month'].dt.strftime('%B'))['Number of receipts'].sum().sort_values().to_frame()
@@ -179,6 +185,16 @@ past_table.loc[:, "Number of receipts"] = past_table["Number of receipts"].map('
 st.write("## Monthly scanned receipts for 2021")
 st.table(past_table)
 st.write("## Predicted monthly scanned receipts for 2022")
+
+
+st.download_button(
+   "Press to Download (Daily)",
+   future_csv,
+   "file.csv",
+   "text/csv",
+   key='download-csv'
+)
+
 st.table(future_table)
 
 
