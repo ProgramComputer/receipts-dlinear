@@ -70,7 +70,7 @@ st.write("created by Paul")
 
 n_epochs = st.slider("$$Epochs$$",value=300,min_value=100,max_value=1000)
 
-train_percent = st.slider("$$Training\;Split$$",value=0.80,max_value=0.9,min_value=0.1)
+train_percent = st.slider("$$Training\;Split$$",value=0.90,max_value=1.0,min_value=0.1)
 source = get_data()
 
 #https://machinelearningmastery.com/lstm-for-time-series-prediction-in-pytorch/ used as reference
